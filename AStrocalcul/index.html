@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Numerología</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            background-image: url(fondo.jpg);
+           /* background-color:linear-gradient(rgb(255, 0, 102), yellow);*/
+            color:rgb(255, 88, 199);
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            background-color: aqua;
+        }
+        .container {
+
+            max-width: 600px;
+            margin: auto;
+            background-image: url(fondo.jpg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #1db5f7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #da5bb4;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background: #4de8b4;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Numerología</h1>
+        <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" required>
+
+        <label for="nombre-completo">Nombre Completo:</label>
+        <input type="text" id="nombre-completo" placeholder="Ejemplo: Barack Obama" required>
+
+        <button onclick="calcularNumerologia()">Calcular</button>
+
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        const numeroDestino = [
+            { numero: 1, significado: 'Liderazgo, independencia, iniciativa.' },
+            { numero: 2, significado: 'Diplomacia, cooperación, sensibilidad.' },
+            { numero: 3, significado: 'Creatividad, expresión, alegría.' },
+            { numero: 4, significado: 'Estabilidad, trabajo duro, organización.' },
+            { numero: 5, significado: 'Aventura, libertad, versatilidad.' },
+            { numero: 6, significado: 'Armonía, responsabilidad, servicio.' },
+            { numero: 7, significado: 'Intuición, análisis, espiritualidad.' },
+            { numero: 8, significado: 'Ambición, éxito material, poder.' },
+            { numero: 9, significado: 'Humanitarismo, compasión, sabiduría.' },
+            { numero: 11, significado: 'Inspiración, idealismo, creatividad y expresión. Sanadores y motivadores.' },
+            { numero: 22, significado: 'Visionario/a para transformar el mundo. Construcción, manifestación, pragmatismo.' }
+        ];
+
+        function calcularNumerologia() {
+            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+            const nombreCompleto = document.getElementById('nombre-completo').value;
+
+            const numeroDestinoResultado = calcularNumeroDestino(fechaNacimiento);
+            const numeroNombreResultado = calcularNumeroNombre(nombreCompleto);
+
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = `
+                <h2>Resultados</h2>
+                <p><strong>Número de Destino:</strong> ${numeroDestinoResultado.numero} - ${numeroDestinoResultado.significado}</p>
+                <p><strong>Número del Nombre:</strong> ${numeroNombreResultado.numero} - ${numeroNombreResultado.significado}</p>
+            `;
+        }
+
+        function calcularNumeroDestino(fecha) {
+            const fechaLimpiada = fecha.replace(/-/g, '');
+            const suma = [...fechaLimpiada].reduce((acc, digit) => acc + parseInt(digit), 0);
+            const numeroDestino = reducirNumero(suma);
+            return buscarSignificado(numeroDestino);
+        }
+
+        function reducirNumero(num) {
+            while (num > 9 && num !== 11 && num !== 22) {
+                num = [...String(num)].reduce((acc, digit) => acc + parseInt(digit), 0);
+            }
+            return num;
+        }
+
+        function buscarSignificado(numero) {
+            const resultado = numeroDestino.find(item => item.numero === numero);
+            return resultado || { numero: numero, significado: 'Sin significado definido' };
+        }
+
+        function calcularNumeroNombre(nombre) {
+            const valores = {
+                A: 1, B: 2, C: 3, D: 4, E: 5, F: 6,
+                G: 7, H: 8, I: 9, J: 1, K: 2, L: 3,
+                M: 4, N: 5, O: 6, P: 7, Q: 8, R: 9,
+                S: 1, T: 2, U: 3, V: 4, W: 5, X: 6,
+                Y: 7, Z: 8
+            };
+
+            const sumaNombre = [...nombre.toUpperCase()].reduce((acc, letra) => {
+                return acc + (valores[letra] || 0);
+            }, 0);
+
+            const numeroNombre = reducirNumero(sumaNombre);
+            return buscarSignificado(numeroNombre);
+        }
+    </script>
+
+</body>
+</html>

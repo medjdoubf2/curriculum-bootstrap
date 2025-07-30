@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagochi Virtual</title>
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-image: url('./fondo.jpg'); /* la imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            color: rgb(210, 44, 152); /* el color del texto para que sea legible sobre el fondo */
+        }
+        #tamagochi-info { margin-top: 20px; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Crea tu Tamagochi</h1>
+    <div>
+        <label for="nombre"><b>Nombre del Tamagochi:</b> </label>
+        <input type="text" id="nombre" />
+        <button id="crear"><b>Crear Tamagochi</b></button>
+    </div>
+    
+    <div id="tamagochi-info" style="display:none;">
+        <h2><b>Información del Tamagochi</b></h2>
+        <p id="salud"></p>
+        <p id="felicidad"></p>
+        <p id="limpieza"></p>
+        <p id="energia"></p>
+        
+        <button id="alimentar">Alimentar</button>
+        <button id="jugar">Jugar</button>
+        <button id="dormir">Dormir</button>
+        <button id="vacunar">Vacunar</button>
+        <button id="duchar">Duchar</button>
+        <button id="reprender">Reprender</button>
+        <button id="acariciar">Acariciar</button>
+    </div>
+
+    <script>
+        class Tamagochi {
+            constructor(nombre) {
+                this.nombre = nombre;
+                this.salud = this.generarValor();
+                this.felicidad = this.generarValor();
+                this.limpieza = this.generarValor();
+                this.energia = this.generarValor();
+            }
+
+            generarValor() {
+                return Math.floor(Math.random() * 10) + 1; // Valores entre 1 y 10
+            }
+
+            actualizarAtributos() {
+                document.getElementById('salud').innerHTML = "Salud: " + "❤️".repeat(this.salud);
+                document.getElementById('felicidad').innerHTML = "Felicidad: " + "😊".repeat(this.felicidad);
+                document.getElementById('limpieza').innerHTML = "Limpieza: " + "🧼".repeat(this.limpieza);
+                document.getElementById('energia').innerHTML = "Energía: " + "⚡".repeat(this.energia);
+            }
+
+            alimentar() {
+                this.energia = Math.min(this.energia + 3, 10);
+                this.felicidad = Math.min(this.felicidad + 2, 10);
+                this.actualizarAtributos();
+            }
+
+            jugar() {
+                this.felicidad = Math.min(this.felicidad + 2, 10);
+                this.energia = Math.max(this.energia - 2, 1);
+                this.limpieza = Math.max(this.limpieza - 1, 1);
+                this.actualizarAtributos();
+            }
+
+            dormir() {
+                this.energia = Math.min(this.energia + 5, 10);
+                this.salud = Math.min(this.salud + 2, 10);
+                this.limpieza = Math.max(this.limpieza - 2, 1);
+                this.actualizarAtributos();
+            }
+
+            vacunar() {
+                this.salud = Math.min(this.salud + 5, 10);
+                this.felicidad = Math.max(this.felicidad - 6, 1);
+                this.actualizarAtributos();
+            }
+
+            duchar() {
+                this.salud = Math.min(this.salud + 3, 10);
+                this.actualizarAtributos();
+            }
+
+            reprender() {
+                this.felicidad = Math.max(this.felicidad - 3, 1);
+                this.actualizarAtributos();
+            }
+
+            acariciar() {
+                this.felicidad = Math.min(this.felicidad + 4, 10);
+                this.actualizarAtributos();
+            }
+        }
+
+        let tamagochi;
+
+        document.getElementById('crear').onclick = function() {
+            const nombre = document.getElementById('nombre').value;
+            if (nombre) {
+                tamagochi = new Tamagochi(nombre);
+                document.getElementById('tamagochi-info').style.display = 'block';
+                tamagochi.actualizarAtributos();
+            } else {
+                alert("Por favor, introduce un nombre.");
+            }
+        };
+
+        // Activar los botones después de crear el Tamagochi
+        document.getElementById('alimentar').onclick = function() { tamagochi.alimentar(); };
+        document.getElementById('jugar').onclick = function() { tamagochi.jugar(); };
+        document.getElementById('dormir').onclick = function() { tamagochi.dormir(); };
+        document.getElementById('vacunar').onclick = function() { tamagochi.vacunar(); };
+        document.getElementById('duchar').onclick = function() { tamagochi.duchar(); };
+        document.getElementById('reprender').onclick = function() { tamagochi.reprender(); };
+        document.getElementById('acariciar').onclick = function() { tamagochi.acariciar(); };
+    </script>
+</body>
+</html>

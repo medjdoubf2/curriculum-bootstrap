@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Contacto - Fuad Medjdoub</title>
+   <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: rgb(172, 47, 255);
+            font-family:'Times New Roman', Times, serif;
+        }
+        body {
+            background-image:url(./img/OIP.jpeg);
+            background-size: cover;
+            overflow: hidden;
+        }
+        .img-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgb(255, 183, 14);
+            flex-shrink: 0;
+        }
+        .img-box img {
+            width: 100%;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .menu {
+            background-color: rgb(16, 32, 201);
+            width: 160px;
+            height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .menu:hover {
+            width: 260px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li a {
+            display: block;
+            text-decoration: none;
+            background-color: #00d5ff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.5s;
+        }
+        ul li a:hover, .active {
+            background-color: rgb(16, 158, 201);
+        }
+        .intro-card {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: white;
+            border: 2px solid rgb(254, 73, 182);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ff0077, #00d0ff, #ff0084);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="./img/profil .jpg" alt="profil" class="img-fluid">
+                </div>
+                <h2>Fuad Medjdoub</h2>
+            </li>
+              <li>
+                <a class="active" href="index.html">
+                    <i class="fas fa-home"></i> 
+                    <p>Inicio</p>
+                </a>
+            </li>
+          >
+            <li>
+                <a href="cv.html">
+                    <i class="fas fa-info-circle"></i> 
+                    <p>curiculum vitea</p>
+                </a>
+                  
+                    <li>
+    <a href="proyectos.html">
+      <i class="bi bi-briefcase"></i> 🏗️
+      <p>Proyectos</p>
+    </a>
+  </li>
+  <li>
+  
+</ul>
+    </div>
+
+    <div class="container" style="margin-left: 200px;">
+        <h1 class="gradient-text text-center">Contacto</h1>
+        <div class="card intro-card my-4">
+            <div class="card-body">
+                <h5 class="card-title">Contáctame</h5>
+                <p class="card-text">
+                    Para cualquier consulta, no dudes en contactarme al siguiente número:
+                </p>
+                <p class="card-text">
+                    <a href="tel:631674223" style="color: rgb(172, 47, 255);">631 67 42 23</a>
+                </p>
+                <p class="card-text">
+                    También puedes enviarme un correo a: <a href="mailto:medjdoubf2@gmail.com">medjdoubf2@gmail.com</a>
+                </p>
+                <h6>Sígueme en mis redes sociales:</h6>
+                <p>
+                    <a href="https://wa.me/631674223" style="color: rgb(172, 47, 255);">
+                        <i class="fab fa-whatsapp"></i> <img src="./img/WattsApp.jpg" alt="WhatsApp" style="width: 40px; height: 40px;"> WhatsApp
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.instagram.com/tu_usuario" style="color: rgb(172, 47, 255);">
+                        <i class="fab fa-instagram"></i> <img src="./img/instagram logo.jpeg" alt="Instagram" style="width: 40px; height: 40px;"> Instagram
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.facebook.com/tu_usuario" style="color: rgb(172, 47, 255);">
+                        <i class="fab fa-facebook"></i> <img src="./img/facebook icon.png" alt="facebook" style="width: 40px; height: 40px;"> Facebook
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

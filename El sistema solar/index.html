@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>El sistema solar</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <h2>&#9733;Nuestro sistema solar&#9733;</h2>
+            <div class="planet" onclick="mostrarImagen('img/sol.jpg', 'sol')"><b>Sol</b></div>
+            <div class="planet" onclick="mostrarImagen('img/planetas.jpg', 'planetas')"><b>Planetas</b></div>
+            <div class="planet" onclick="mostrarImagen('img/mercurio.jpg', 'mercurio')"><b>Mercurio</b></div>
+            <div class="planet" onclick="mostrarImagen('img/venus.jpg', 'venus')"><b>Venus</b></div>
+            <div class="planet" onclick="mostrarImagen('img/tierra.jpg', 'tierra')"><b>Tierra</b></div>
+            <div class="planet" onclick="mostrarImagen('img/marte.jpg', 'marte')"><b>Marte</b></div>
+            <div class="planet" onclick="mostrarImagen('img/jupiter.jpg', 'júpiter')"><b>Júpiter</b></div>
+            <div class="planet" onclick="mostrarImagen('img/saturno.jpg', 'saturno')"><b>Saturno</b></div>
+            <div class="planet" onclick="mostrarImagen('img/urano.jpg', 'urano')"><b>Urano</b></div>
+            <div class="planet" onclick="mostrarImagen('img/neptuno.jpg', 'neptuno')"><b>Neptuno</b></div>
+            <div class="planet" onclick="mostrarImagen('img/plutón.jpg', 'plutón')"><b>Plutón</b></div>
+            <div class="planet" onclick="mostrarImagen('img/eris.jpg', 'eris')"><b>Eris</b></div>
+            <div class="planet" onclick="mostrarImagen('img/haumea.jpg', 'haumea')"><b>Haumea</b></div>
+            <div class="planet" onclick="mostrarImagen('img/makemake.jpg', 'makemake')"><b>Makemake</b></div>
+            <div class="planet" onclick="mostrarImagen('img/nave.jpg', 'nave')"><b>Nave</b></div>
+        </div>
+        <div class="imagen">
+            <img id="imagenPlaneta" src="img" alt="planeta" style="display:none;">
+            <p id="nombrePlaneta" style="display:none;"></p>
+        </div>
+    </div>
+    <script>
+        function mostrarImagen(imagen, nombre) {
+            const imgElement = document.getElementById('imagenPlaneta');
+            const nombreElement = document.getElementById('nombrePlaneta');
+            imgElement.src = imagen;
+            imgElement.style.display = 'block';
+            imgElement.style.maxWidth = '100%'; // Ajusta el tamaño de la imagen
+            imgElement.style.height = 'auto'; // Mantiene la proporción de la imagen
+            nombreElement.textContent = nombre;
+            nombreElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

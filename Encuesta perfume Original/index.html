@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Encuesta de perfumería</title>
+   <style>
+        body {
+            background-image: url('./img/art-verts-bleus-colores-fond-d-ecran.jpg');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: wheat;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>    
+  
+</head>
+
+    <strong><h1>Encuesta sobre perfumería</h1></strong>
+    <p>¿Cuáles son tus gustos sobre fragancias? Llena los campos con tu información</p>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+    <label for="nombre">fouad:</label>
+    <input type="text" id="nombre" name="fouad" placeholder="fouad" required>
+
+    <label for="edad">Edad (opcional):</label>
+    <input type="text" id="edad" name="edad" placeholder="15/02/1974">
+
+    <label>¿Cuál es tu familia olfativa preferida?</label>
+    <input type="text" id="familia_olfativa" name="familia_olfativa" placeholder="Ej: Hugo Boss">
+
+ <fieldset>
+        <legend>¿Qué tipos de fragancias prefieres?</legend>
+        <label><input id="Feminina" type="radio" name="tipo_fragancia" value="Feminina">Feminina</label>
+        <label><input id="Masculina" type="radio" name="tipo_fragancia" value="Masculina" checked>Masculina</label>
+        <label><input id="Unisex" type="radio" name="tipo_fragancia" value="Unisex">Unisex</label>
+ 
+    </fieldset>
+    <fieldset>
+        <legend><strong>¿Qué concentraciones utilizas de manera habitual? (selecciona todas las que quieras)</strong></legend>
+        <label><input type="checkbox"> Eau fraiche (EF): 1-3% corta duración, ideal para climas cálidos.</label><br>
+        <label><input type="checkbox"> Eau de cologne (EDC): 3-5% Duración moderada para uso diario.</label><br>
+        <label><input type="checkbox" checked> Eau de toilette (EDT): 4-8% durabilidad en diferentes ocasiones.</label><br>
+        <label><input type="checkbox" checked> Eau de parfum (EDP): 8-15% duración prolongada para noche o evento.</label><br>
+        <label><input type="checkbox" checked> Parfum (P) o Extrait de parfum: 15-30% muy duradero.</label>
+    </fieldset>
+
+    <p><b>Nombra tres de tus perfumes preferidos:</b></p>
+    <input type="text" id="perfumes" name="perfumes" placeholder="Ej: aqua de gio, bleu de chanel, lhomme yves saint laurent">
+
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>
