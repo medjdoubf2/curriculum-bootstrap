@@ -1,0 +1,62 @@
+body {
+    background-image: url(./img/Palindromos-800x471.jpg);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Fondo degradado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #d520ba; /* Color del texto */
+}
+
+.container {
+    text-align: center;
+    background: rgba(51, 199, 202, 0.9); /* Fondo blanco con opacidad */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+}
+
+h1 {
+    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
+    margin-bottom: 20px;
+    color: #007acc; /* Color del título */
+}
+
+input {
+    padding: 12px;
+    width: 80%;
+    border: 2px solid #007acc; /* Borde del input */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1em; /* Tamaño de fuente del input */
+    transition: border-color 0.3s; /* Transición para el borde */
+}
+
+input:focus {
+    border-color: #005999; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno por defecto */
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #007acc; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em; /* Tamaño de fuente del botón */
+    transition: background-color 0.3s; /* Transición para el fondo */
+}
+
+button:hover {
+    background-color: #005999; /* Color de fondo al pasar el mouse */
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em; /* Aumentar el tamaño del texto del resultado */
+}

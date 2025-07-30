@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email_JS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    nav {
+      font-size: 0.85rem;
+      background-image: url('./img/a-man-finishes-work-on-deadline-illustration-of-an-active-man-working-on-a-laptop-freelance-illustration-free-png.webp');
+    }
+
+    header {
+      color: white;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+
+    header p {
+      font-size: 1.1em;
+    }
+
+    h1 {
+      font-weight: 200;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    main .row {
+      margin-bottom: 10px;
+    }
+
+    .arrow-button-wrapper {
+      position: relative;
+      top: -25px;
+      /* sobresale del header hacia el main */
+      z-index: 5;
+    }
+
+    .btn-green-arrow {
+      background-color: #8A2BE2;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-green-arrow:hover {
+      background-color: #8A2BE2;
+      text-decoration: none;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-variant: small-caps;
+      text-align: center;
+      color: #8A2BE2;
+    }
+
+    .logo img {
+      border-radius: 50%;
+      /* Redondear el logotipo */
+      width: 100px;
+      /* Establecer el ancho */
+      height: 100px;
+      /* Establecer la altura */
+    }
+
+    .right-space {
+      margin-right: 30px;
+    }
+
+    /* Estilos para modo claro y oscuro */
+    body.modo-claro {
+      background-color: #f0f0f0;
+      color: black;
+    }
+
+    body.modo-oscuro {
+      background-color: #333;
+      color: white;
+    }
+
+    .navbar, header, main {
+      transition: background-color 0.5s, color 0.5s;
+    }
+  </style>
+
+</head>
+
+<body class="modo-claro">
+  <div class="container-fluid bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-sm bg-dark">
+      <a class="navbar-brand logo" href="logo"><img src="./img/logo.png" alt="logo"><br>Designer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button class="boton" id="toggleButton">🌞 Día / 🌜 Noche</button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./quien soy.html">Quién soy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cv.html">MI CV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./proyectos.html">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link right-space active" href="contacto.html">Contáctame</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/medjdoubf2" target="_blank" rel="noreferrer" title="Github">
+              <i class="bi bi-github"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer" title="Linkedin">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://web.whatsapp.com/" target="_blank" rel="noreferrer" title="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://x.com/tu_usuario" target="_blank" rel="noreferrer" title="Twitter">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <header class="container-fluid bg-dark" data-bs-theme="dark">
+    <div class="row">
+      <div class="col-12" data-bs-theme="dark">
+        <h1 data-bs-theme="dark">Hagamos juntos un proyecto increíble</h1>
+      </div>
+    </div>
+  </header>
+  <div class="arrow-button-wrapper text-center">
+    <button class="btn btn-green-arrow">
+      &#11163;
+    </button>
+  </div>
+  <main class="container-fluid" data-bs-theme="light">
+    <form id="contacto">
+      <div class="row">
+        <div class="col-4">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="bi bi-person-fill"></i>
+            </span>
+            <input type="text" class="form-control" name="user_name" placeholder="Tu nombre" aria-label="Tu nombre"
+              aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="bi bi-telephone-fill"></i>
+            </span>
+            <input type="tel" class="form-control" name="user_phone" placeholder="Teléfono" aria-label="Teléfono"
+              aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div class="col-4" data-bs-theme="light">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+              <i class="bi bi-envelope-fill"></i>
+            </span>
+            <input type="email" class="form-control" name="user_email" placeholder="Tu email" aria-label="Tu email"
+              aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group">
+            <span class="input-group-text d-flex flex-column justify-content-start">
+              <i class="bi bi-chat-fill"></i>
+            </span>
+            <textarea class="form-control" name="user_message" aria-label="mensaje">Tu mensaje
+            </textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9">
+          <input type="hidden" name="timestamp" id="timestamp">
+        </div>
+        <div class="col-3">
+          <button type="submit" class="btn btn-outline-primary">Escríbeme</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init("TU_PUBLIC_KEY"); // reemplaza con tu clave real
+
+    document.getElementById("contacto").addEventListener("submit", function(e) {
+      e.preventDefault(); // evita que se recargue la página
+
+      // Captura la fecha y hora
+      document.getElementById("timestamp").value = new Date().toLocaleString();
+
+      // Envía el formulario
+      emailjs.sendForm("TU_SERVICE_ID", "TU_TEMPLATE_ID", this)
+        .then(function(response) {
+          console.log("Correo enviado con éxito!", response.status, response.text);
+          alert("¡Gracias! Tu mensaje ha sido enviado.");
+        }, function(error) {
+          console.error("Error al enviar el correo:", error);
+          alert("Ups... hubo un problema al enviar tu mensaje.");
+        });
+    });
+
+    // Funcionalidad del botón de modo claro/oscuro
+    const toggleButton = document.getElementById('toggleButton');
+    let isDay = true; // Estado inicial
+
+    toggleButton.addEventListener('click', () => {
+      if (isDay) {
+        document.body.classList.remove('modo-claro');
+        document.body.classList.add('modo-oscuro');
+        toggleButton.textContent = '🌜 Noche'; // Cambiar texto del botón
+      } else {
+        document.body.classList.remove('modo-oscuro');
+        document.body.classList.add('modo-claro');
+        toggleButton.textContent = '🌞 Día'; // Cambiar texto del botón
+      }
+      isDay = !isDay; // Cambiar estado
+    });
+  </script>
+</body>
+
+</html>

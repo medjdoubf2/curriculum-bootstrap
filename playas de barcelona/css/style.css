@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    background-image: url('img/women-3266211_640.jpg');  /* Cambia esto por la URL de tu imagen */
+    background-size: cover;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d5ff;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00e6db;
+}
+
+.animation {
+    margin-top: 20px;
+    height: 100px;
+    width: 100%;
+    display: none;
+}
